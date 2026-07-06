@@ -1,0 +1,14 @@
+[2026-07-06T23:01:00.435+0000] {processor.py:161} INFO - Started process (PID=6027) to work on /opt/airflow/dags/nyc_mobility_dag.py
+[2026-07-06T23:01:00.436+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/nyc_mobility_dag.py for tasks to queue
+[2026-07-06T23:01:00.439+0000] {logging_mixin.py:188} INFO - [2026-07-06T23:01:00.438+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/nyc_mobility_dag.py
+[2026-07-06T23:01:00.470+0000] {processor.py:840} INFO - DAG(s) 'nyc_mobility_analytics' retrieved from /opt/airflow/dags/nyc_mobility_dag.py
+[2026-07-06T23:01:00.508+0000] {logging_mixin.py:188} INFO - [2026-07-06T23:01:00.508+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-07-06T23:01:00.527+0000] {logging_mixin.py:188} INFO - [2026-07-06T23:01:00.527+0000] {dag.py:3954} INFO - Setting next_dagrun for nyc_mobility_analytics to 2026-08-01 06:00:00+00:00, run_after=2026-09-01 06:00:00+00:00
+[2026-07-06T23:01:00.547+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/nyc_mobility_dag.py took 0.122 seconds
+[2026-07-06T23:01:30.696+0000] {processor.py:161} INFO - Started process (PID=6032) to work on /opt/airflow/dags/nyc_mobility_dag.py
+[2026-07-06T23:01:30.697+0000] {processor.py:830} INFO - Processing file /opt/airflow/dags/nyc_mobility_dag.py for tasks to queue
+[2026-07-06T23:01:30.699+0000] {logging_mixin.py:188} INFO - [2026-07-06T23:01:30.699+0000] {dagbag.py:545} INFO - Filling up the DagBag from /opt/airflow/dags/nyc_mobility_dag.py
+[2026-07-06T23:01:30.718+0000] {processor.py:840} INFO - DAG(s) 'nyc_mobility_analytics' retrieved from /opt/airflow/dags/nyc_mobility_dag.py
+[2026-07-06T23:01:30.748+0000] {logging_mixin.py:188} INFO - [2026-07-06T23:01:30.748+0000] {dag.py:3096} INFO - Sync 1 DAGs
+[2026-07-06T23:01:30.767+0000] {logging_mixin.py:188} INFO - [2026-07-06T23:01:30.766+0000] {dag.py:3954} INFO - Setting next_dagrun for nyc_mobility_analytics to 2026-08-01 06:00:00+00:00, run_after=2026-09-01 06:00:00+00:00
+[2026-07-06T23:01:30.784+0000] {processor.py:183} INFO - Processing /opt/airflow/dags/nyc_mobility_dag.py took 0.094 seconds
