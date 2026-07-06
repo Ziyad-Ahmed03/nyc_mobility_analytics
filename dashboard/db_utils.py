@@ -79,6 +79,15 @@ def upsert_kpis(dataset: str, kpis: dict, data_month: str = "2025-01"):
 
 def load_kpis_from_pg(dataset: Optional[str] = None) -> pd.DataFrame:
     """Load KPIs from PostgreSQL, optionally filtered by dataset."""
+    if not test_connection():
+        csv_path = os.path.join(os.path.dirname(__file__), "static_data", "analytics_kpis.csv")
+        if os.path.exists(csv_path):
+            df = pd.read_csv(csv_path)
+            if dataset:
+                df = df[df["dataset"] == dataset]
+            return df
+        return pd.DataFrame()
+        
     if dataset:
         return query_df(
             "SELECT * FROM analytics_kpis WHERE dataset = :dataset ORDER BY metric_name",
@@ -89,11 +98,24 @@ def load_kpis_from_pg(dataset: Optional[str] = None) -> pd.DataFrame:
 
 def load_top_zones_from_pg() -> pd.DataFrame:
     """Load top pickup zones from PostgreSQL."""
+    if not test_connection():
+        csv_path = os.path.join(os.path.dirname(__file__), "static_data", "top_pickup_zones.csv")
+        if os.path.exists(csv_path):
+            return pd.read_csv(csv_path)
+        return pd.DataFrame()
+        
     return query_df("SELECT * FROM top_pickup_zones ORDER BY trips DESC")
 
 
 def load_hourly_from_pg(dataset: str = "yellow") -> pd.DataFrame:
     """Load hourly analytics from PostgreSQL."""
+    if not test_connection():
+        csv_path = os.path.join(os.path.dirname(__file__), "static_data", "hourly_analytics.csv")
+        if os.path.exists(csv_path):
+            df = pd.read_csv(csv_path)
+            return df[df["dataset"] == dataset]
+        return pd.DataFrame()
+        
     return query_df(
         "SELECT * FROM hourly_analytics WHERE dataset = :dataset ORDER BY hour_of_day",
         params={"dataset": dataset}
